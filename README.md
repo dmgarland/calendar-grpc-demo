@@ -1,4 +1,4 @@
-# Calender GRPC Demo
+# Calendar GRPC Demo
 
 What I did:
 
