@@ -14,6 +14,7 @@ module Calendar
     self.service_name = 'Calendar'
 
     rpc :AddEvent, Event, EventAdded
+    rpc :ShowEvents, EventRequest, stream(Event)
   end
 
   Stub = Service.rpc_stub_class

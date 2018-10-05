@@ -2,13 +2,20 @@ syntax = 'proto3';
 
 service Calendar {
   rpc AddEvent(Event) returns (EventAdded) {}
+  rpc ShowEvents(EventRequest) returns (stream Event) {}
 }
 
 message Event {
   string name = 1;
   string date = 2;
+  bool recurring = 3;
 }
 
 message EventAdded {
   bool added = 1;
+}
+
+message EventRequest {
+  string from = 1;
+  string to = 2;
 }

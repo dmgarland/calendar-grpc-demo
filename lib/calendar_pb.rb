@@ -7,11 +7,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "Event" do
     optional :name, :string, 1
     optional :date, :string, 2
+    optional :recurring, :bool, 3
   end
   add_message "EventAdded" do
     optional :added, :bool, 1
+  end
+  add_message "EventRequest" do
+    optional :from, :string, 1
+    optional :to, :string, 2
   end
 end
 
 Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("Event").msgclass
 EventAdded = Google::Protobuf::DescriptorPool.generated_pool.lookup("EventAdded").msgclass
+EventRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("EventRequest").msgclass
