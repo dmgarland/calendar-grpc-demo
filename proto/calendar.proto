@@ -1,0 +1,14 @@
+syntax = 'proto3';
+
+service Calendar {
+  rpc AddEvent(Event) returns (EventAdded) {}
+}
+
+message Event {
+  string name = 1;
+  string date = 2;
+}
+
+message EventAdded {
+  bool added = 1;
+}
