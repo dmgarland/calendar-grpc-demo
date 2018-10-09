@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 service Calendar {
   rpc AddEvent(Event) returns (EventAdded) {}
-  rpc ShowEvents(EventRequest) returns (stream Event) {}
+  rpc ShowEvents(EventRange) returns (stream Event) {}
 }
 
 message Event {
@@ -15,7 +15,7 @@ message EventAdded {
   bool added = 1;
 }
 
-message EventRequest {
+message EventRange {
   string from = 1;
   string to = 2;
 }

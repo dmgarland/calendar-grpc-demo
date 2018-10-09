@@ -10,7 +10,7 @@ response = stub.add_event(Event.new(name: 'LRUG', date: '2018-05-09', recurring:
 puts response.added
 
 
-events = stub.show_events(EventRequest.new(from: '2018-01-1', to: '2018-12-31'))
+events = stub.show_events(EventRange.new(from: '2018-01-1', to: '2018-12-31'))
 events.each do |event|
   puts "#{event.name} is happening on #{event.date}"
 end

@@ -12,7 +12,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "EventAdded" do
     optional :added, :bool, 1
   end
-  add_message "EventRequest" do
+  add_message "EventRange" do
     optional :from, :string, 1
     optional :to, :string, 2
   end
@@ -20,4 +20,4 @@ end
 
 Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("Event").msgclass
 EventAdded = Google::Protobuf::DescriptorPool.generated_pool.lookup("EventAdded").msgclass
-EventRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("EventRequest").msgclass
+EventRange = Google::Protobuf::DescriptorPool.generated_pool.lookup("EventRange").msgclass

@@ -22,9 +22,9 @@ class CalendarServer < Calendar::Service
     return EventAdded.new(added: true)
   end
 
-  def show_events(request, _call)
-    from = Date.parse(request.from)
-    to = Date.parse(request.to)
+  def show_events(range, _call)
+    from = Date.parse(range.from)
+    to = Date.parse(range.to)
 
     Enumerator.new do |y|
       @events.select {|event| event.actual_date <= to && event.actual_date >= from }.each do |event|
